@@ -25,9 +25,13 @@ infinity.
    the effective drag on each plate.
 2. **General $N$, prescribed motion** — superposition and interference from multiple
    retarded sources; patterns in the force/work as a function of geometry and drive.
-3. **Numerical simulation** — a direct time-domain solver to validate the analytics
+3. **Free (self-consistent) dynamics** — give each plate an areal mass density $\mu_i$ and
+   let it respond to the fields: $\mu_i\dot{\mathbf{v}}_i = \mathbf{f}_i + \mathbf{f}_i^{\text{ext}}$.
+   This is a system of **delay differential equations** (retarded coupling) — look for
+   normal modes, resonances, and instabilities.
+4. **Numerical simulation** — a direct time-domain solver to validate the analytics
    (the 1-D-in-$x$, retarded current-sheet array is very clean to simulate).
-4. **Extensions** — radiation pressure / momentum along $x$; relaxing assumptions.
+5. **Extensions** — radiation pressure / momentum along $x$; relaxing assumptions.
 
 ---
 
@@ -42,8 +46,8 @@ The deeper parking lot (the immediate next step lives in §1–§2):
   plate's motion?
 - **Net momentum / radiation pressure along $x$** from the normal magnetic force
   $\mathbf{K}\times\mathbf{B}$.
-- **A clean definition of efficiency** — energy radiated to infinity vs. work supplied by
-  the applied force.
+- **Mechanical inertia and a driving-agent model**; a clean definition of efficiency
+  (energy radiated vs. work supplied).
 - **Relaxing assumptions:** conducting sheets (induced currents, reflection, multiple
   scattering), finite conductivity, relativistic speeds.
 
@@ -53,18 +57,15 @@ The deeper parking lot (the immediate next step lives in §1–§2):
 
 Choices already made and why — so we don't relitigate them or re-explore dead ends.
 
-- **Prescribed motion.** We dictate $\mathbf{v}_i(t)$ and measure the force required. This
-  isolates the field/force/work questions. Free self-consistent dynamics is not on the
-  table: with massless sheets there is no inertial term ($\mu_i\dot{\mathbf{v}}_i = \mathbf{f}_i$
-  degenerates to the constraint $\mathbf{f}_i = 0$), so free dynamics would require
-  reintroducing mass — a different universe.
+- **Prescribed motion (not free dynamics).** We dictate $\mathbf{v}_i(t)$ and measure the
+  force required. This isolates the field/force/work questions from self-consistent
+  dynamics. Free dynamics is deferred to roadmap step 3.
 - **Non-conducting, "painted" charge.** No induced currents ⇒ no reflection or scattering
   ⇒ the total field is an exact superposition of each plate's independently-emitted waves.
   This is precisely what makes the master-relation single sum exact (`EXPERIMENT-DOCUMENT.md`
   §6).
-- **Massless sheets (no mechanical inertia).** A firm premise, not a deferral. It keeps the
-  accounting purely electromagnetic and isolates the field/force/work questions; with no
-  kinetic-energy term, every energy quantity is field energy.
+- **Electromagnetic-only accounting.** Mechanical inertia set aside; an optional areal mass
+  density $\mu_i$ may be added later (roadmap step 3).
 - **Non-relativistic speeds.** A premise; keeps $\sigma_i$ constant.
 - **Versioning by timestamped folders**, not an in-document change log — keeps the spec
   clean.
@@ -91,10 +92,3 @@ Short, dated entries — "what we just did." Keep it lean; deep history is prese
     term recovers the radiation reaction).
   - Created the project scaffolding: `EXPERIMENT-DOCUMENT.md`, `CLAUDE.md`, this notebook,
     and the `versions/` workflow.
-
-- **2026-06-19 — Committed to the massless, prescribed-motion universe.**
-  - Dropped the "self-consistent free dynamics" alternative from the spec's prescribed-motion
-    premise.
-  - Made **massless sheets** a firm, uncontested premise (spec §3.4) and purged mass /
-    areal-mass-density $\mu_i$ from everywhere. Removed free dynamics from the roadmap (it
-    requires an inertial term and is therefore a different universe).

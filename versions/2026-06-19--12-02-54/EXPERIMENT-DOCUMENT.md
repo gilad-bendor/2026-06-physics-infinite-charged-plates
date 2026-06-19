@@ -49,14 +49,15 @@ if we relax one.
    is constant (no Lorentz-contraction corrections).
 2. **Prescribed motion.** We externally dictate each $\mathbf{v}_i(t)$ and measure the
    force required. Plates do **not** respond freely to incident fields.
+   *(Alternative — self-consistent free dynamics — is an open direction; see
+   `LAB-NOTEBOOK.md`.)*
 3. **Non-conducting, painted charge.** Charge cannot redistribute and there are **no
    induced currents**. Consequence: no reflection or scattering — the total field is an
    exact superposition of the waves each sheet emits from its own prescribed motion. No
    multiple-bounce bookkeeping is ever needed.
-4. **Massless sheets — electromagnetic accounting only.** The sheets carry **no
-   mechanical inertia** (no mass). Consequently there is no kinetic-energy term for the
-   sheets; all forces and work are purely electromagnetic, and every energy quantity we
-   track is field energy.
+4. **Electromagnetic accounting only.** Forces and work are tracked as electromagnetic.
+   Mechanical inertia is set aside (an optional areal mass density $\mu_i$ can be added
+   later; see `LAB-NOTEBOOK.md`).
 5. **No external sources or fields**, no gravity, no boundaries at infinity (fields
    $\to 0$ far away unless emitted by a sheet).
 6. **Retardation is fully retained** (see §4.5 and §7.8). No quasi-static approximation.
@@ -91,7 +92,7 @@ if we relax one.
 
 ### 4.3 Math conventions
 
-- Vectors: $\mathbf{E}$, $\mathbf{v}$, $\mathbf{K}$. Unit vectors: $\hat{\mathbf{x}}, \hat{\mathbf{y}}, \hat{\mathbf{z}}$.
+- Vectors: `\mathbf{E}`, `\mathbf{v}`, `\mathbf{K}`. Unit vectors: $\hat{\mathbf{x}}, \hat{\mathbf{y}}, \hat{\mathbf{z}}$.
 - Plate indices: subscripts $i, j$. Field components: $E_x, E_y, E_z$ (so $E_{i,y}$ is the
   $y$-component at plate $i$).
 - Retarded time: $t_r = t - d_{ij}/c$.
