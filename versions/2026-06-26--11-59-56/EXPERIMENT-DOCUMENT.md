@@ -33,13 +33,6 @@ without radiating, and its sole new effect is to make the normal forces do work 
   $u\,\hat{\mathbf{x}}$: sheet $i$ sits at $x_i(t) = x_i^0 + u\,t$. Because the drift is
   shared, every separation $d_{ij} = |x_i - x_j|$ stays **constant** and the stack never
   changes shape. Each sheet remains **rigid**.
-- Each sheet's **normal ($x$) degree of freedom carries an ideal load**: a lossless,
-  stationary port (a dynamo/motor) that holds the sheet to the common drift $u$ and trades
-  the normal power with the outside world. It is the applied normal force of §6 read as an
-  **energy port** — it **generates** when the normal force aids the drift and **motors**
-  when it opposes — and it carries no charge, so it never radiates. The per-plate loads
-  turn the experiment into a system with an explicit **output-energy-vs-time** function
-  $W^{\text{out}}(t)$ (§§5, 6, 7.10).
 - Each sheet carries a **uniform surface charge density** $\sigma_i$ (signed, in
   $\mathrm{C/m^2}$), fixed and "painted on."
 - Each sheet may **translate rigidly within its own plane** as well: its position in $y$
@@ -84,9 +77,8 @@ if we relax one.
    and constant**, not free: a massless sheet cannot undergo a finite radiation-*driven*
    normal acceleration (free dynamics would force the degenerate $f_x = 0$). So the applied
    force maintains the constant $u$, and we read off the **normal power** it must supply.
-   With the per-plate loads of §2 this maintaining force *is* the load, and it still needs
-   no inertia (§7.10). Letting radiation genuinely accelerate the plates along $x$ would
-   require giving them mass — a different universe (see the notebook).
+   Letting radiation genuinely accelerate the plates along $x$ would require giving them
+   mass — a different universe (see the notebook).
 5. **No external sources or fields**, no gravity, no boundaries at infinity (fields
    $\to 0$ far away unless emitted by a sheet).
 6. **Retardation is fully retained** (see §4.5 and §7.8). No quasi-static approximation.
@@ -163,11 +155,6 @@ For each plate $i$ and time $t$:
    the power splits into an **in-plane** part $\mathcal{P}_{i,\perp} =
    \mathbf{f}_{i,\perp}^{\text{app}}\cdot\mathbf{v}_{i,\perp}$ and the **new normal part**
    $\mathcal{P}_{i,x} = f_{i,x}^{\text{app}}\,u$ (zero when $u = 0$).
-4. **Load output per unit area** — the energy each per-plate load (§2) delivers to the
-   outside is the negative of the normal power it must absorb to hold the drift:
-   $\mathcal{P}_{i,x}^{\text{out}} = -\mathcal{P}_{i,x} = u\,f_{i,x}$ (positive =
-   **generating**, negative = **motoring**). Summed and integrated, the system's
-   **output-energy-vs-time** function is $W^{\text{out}}(t) = \int_0^t \sum_i u\,f_{i,x}\,dt'$.
 
 ---
 
@@ -222,17 +209,6 @@ $$
 \sum_i \mathcal{P}_{i,x} = -u\,F_x^{\text{tot}}, \qquad
 F_x^{\text{tot}} = \sum_i \big(\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp}\big)_x .
 $$
-
-**Per-plate load output and the system output-energy function** — each load delivers
-$\mathcal{P}_{i,x}^{\text{out}} = -\mathcal{P}_{i,x} = u\,f_{i,x}$ to the outside. The
-Coulomb pieces are constant in time and cancel in the sum, so the **net** output is purely
-the radiation-pressure recoil:
-$$
-\sum_i \mathcal{P}_{i,x}^{\text{out}} = u\,F_x^{\text{tot}}, \qquad
-W^{\text{out}}(t) = \int_0^t u\,F_x^{\text{tot}}\,dt' .
-$$
-This is **not** free energy: it is sliced out of the lab-frame radiation budget (§7.10),
-and any individual load with $u\,f_{i,x} < 0$ **motors** (consumes) rather than generates.
 
 > Everything the experiment asks about is contained in these boxed relations plus the
 > single-sheet emission formula in §7.5.
@@ -382,59 +358,6 @@ net piece $-u\,F_x^{\text{tot}}$ is precisely the radiated **momentum** flux
 $F_x^{\text{tot}}$ carried along by the drift $u$. Energy and momentum are conserved in
 both frames; only their split into "work along $x$" versus "radiated energy" differs.
 
-### 7.10 The per-plate load: output energy, motor vs. generator, and why no mass is needed
-
-Attach to each sheet's normal degree of freedom an **ideal load** — a lossless, stationary
-port (a dynamo/motor) that holds the sheet to the common drift $u$ and exchanges the normal
-power with the outside. The load is **not** new physics: it is the applied normal force
-$f_{i,x}^{\text{app}} = -f_{i,x}$ of §6, now read as an **energy port**. It carries no
-charge, sources no field, and radiates nothing. Its output per unit area is
-$$
-\mathcal{P}_{i,x}^{\text{out}} = -\mathcal{P}_{i,x} = u\,f_{i,x},
-$$
-positive when the load **generates** (the normal force aids the drift) and negative when it
-**motors** (the force opposes the drift and the load must drive the sheet).
-
-**No mass is required.** One might expect to need inertia so that
-"force $\to$ acceleration $\to$ harvested work" makes sense. But masslessness only demands
-that the **net** normal force vanish, $f_{i,x}^{\text{load}} + f_{i,x} = 0$, i.e.
-$f_{i,x}^{\text{load}} = -f_{i,x}$ — which is *exactly* the force that holds the drift at
-constant $u$. The hold-$u$ condition and the massless constraint are the same equation, so
-the load satisfies both with no inertial term. Mass becomes necessary only in the opposite
-construction — **remove the load** and let radiation pressure genuinely accelerate the
-drift — which is a separate (massive) universe, not this one.
-
-**Two pieces, two characters.** With
-$f_{i,x} = \sigma_i E_{i,x}^{\text{stat}} + (\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp})_x$:
-
-- *Coulomb part* $u\,\sigma_i E_{i,x}^{\text{stat}}$ — **constant in time** and **zero-sum**
-  across the stack ($\sum_i \sigma_i E_{i,x}^{\text{stat}} = 0$). For every load that
-  generates there is a partner that motors the same power: the inter-sheet Coulomb forces
-  are action–reaction pairs, so carrying them rigidly at $u$ extracts nothing net. Reverse
-  the drift and every generator and motor swaps role — the signature of pure bookkeeping,
-  not a source. *(Two equal positive sheets, stack drifting toward the right one: the right
-  sheet is pushed along the drift — its load generates; the left sheet is pushed against the
-  drift — its load motors the same amount.)*
-- *Radiation-pressure part* $u\,(\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp})_x$ —
-  **time-varying** and the only part that survives the sum, giving the net output
-  $\sum_i \mathcal{P}_{i,x}^{\text{out}} = u\,F_x^{\text{tot}}$ and
-  $W^{\text{out}}(t) = \int_0^t u\,F_x^{\text{tot}}\,dt'$.
-
-**No free lunch.** This net output is real in the lab frame but is **sliced out of the
-radiation budget**, not added to it. The full lab-frame balance (steady drift, leading
-order in $u/c$) is
-$$
-\underbrace{\mathcal{P}_\perp^{\text{drive}}}_{\text{in-plane drive in}}
-= \underbrace{\mathcal{P}_{\text{rad}}^{\text{lab}}}_{\text{radiated}}
-+ \underbrace{\textstyle\sum_i \mathcal{P}_{i,x}^{\text{out}}}_{\text{tapped by loads}},
-\qquad
-\mathcal{P}_{\text{rad}}^{\text{lab}} = \mathcal{P}_{\text{rad}}^{\text{comoving}} - u\,F_x^{\text{tot}},
-$$
-with $\mathcal{P}_{\text{rad}}^{\text{comoving}} = \mathcal{P}_\perp^{\text{drive}}$ (the §7.7
-self-drag balance). The loads merely **reroute** part of what would have been radiated into
-useful output; the in-plane drive remains the sole energy source, and in the comoving frame
-the load output is identically zero (§7.9). No perpetual motion.
-
 ---
 
 ## 8. Glossary
@@ -455,12 +378,3 @@ the load output is identically zero (§7.9). No perpetual motion.
 - **Radiation pressure** — the net normal ($x$) force from the magnetic
   $\mathbf{K}\times\mathbf{B}$ term, equal to the $x$-momentum flux carried by the emitted
   waves; its work is the net normal power once $u \neq 0$.
-- **Ideal load** — a lossless, stationary, chargeless port on a sheet's normal degree of
-  freedom that holds the common drift $u$ and exchanges the normal power with the outside;
-  physically the applied normal force read as an energy port (§7.10).
-- **Generator / motor (of a load)** — a load *generates* (outputs energy) when the normal
-  force aids the drift, and *motors* (consumes energy) when it opposes; the Coulomb
-  contributions split into generator/motor pairs that exactly cancel (§7.10).
-- **Output-energy function $W^{\text{out}}(t)$** — the cumulative energy per unit area the
-  loads deliver to the outside; net of the zero-sum Coulomb part, it equals the time
-  integral of the radiation-pressure recoil power $u\,F_x^{\text{tot}}$ (§§6, 7.10).

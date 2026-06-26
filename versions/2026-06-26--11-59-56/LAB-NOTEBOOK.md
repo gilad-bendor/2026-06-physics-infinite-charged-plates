@@ -24,15 +24,6 @@ Coulomb and magnetic forces along $x$ now act through a displacement and do work
 §7.9). For the $N = 2$ case this means we additionally track $\mathcal{P}_{i,x} = -u f_{i,x}$,
 whose net is the radiation-pressure recoil $-u F_x^{\text{tot}}$.
 
-**New ingredient (2026-06-26): per-plate loads and an output-energy function.** Each
-sheet's normal degree of freedom now carries an ideal load (spec §2) that holds the common
-drift $u$ and taps the normal power, turning the stack into a system with an explicit
-output-energy-vs-time $W^{\text{out}}(t)$ (spec §§5–6, 7.10). Two honesty guardrails are
-baked into the spec: the Coulomb part of the per-plate output is constant and **zero-sum**
-(some loads motor, some generate), and the only **net** output is the radiation-pressure
-recoil $\int u F_x^{\text{tot}}\,dt$, sliced from the lab-frame radiation budget — not free
-energy.
-
 ---
 
 ## 2. Where We're Heading (Roadmap)
@@ -66,11 +57,9 @@ The deeper parking lot (the immediate next step lives in §1–§2):
   derivation — is it a genuine aberration/Doppler effect, and does it survive a careful
   non-relativistic accounting?
 - **Massless-vs-free-drift tension.** The drift is *prescribed* constant because massless
-  sheets cannot accelerate freely along $x$ ($f_x = 0$ degeneracy). The **per-plate load**
-  (spec §7.10) maintains $u$ and resolves the degeneracy *without* mass — it supplies
-  exactly the force that keeps the net normal force zero. Mass is required only in the
-  opposite branch: **remove the load** and let radiation genuinely accelerate the plates
-  along $x$ — a separate universe to branch, not patch.
+  sheets cannot accelerate freely along $x$ ($f_x = 0$ degeneracy). If we ever want
+  radiation to genuinely accelerate the plates along $x$, we must reintroduce mass for the
+  normal degree of freedom — a separate universe to branch, not patch.
 - **A clean definition of efficiency** — energy radiated to infinity vs. work supplied by
   the applied force.
 - **Relaxing assumptions:** conducting sheets (induced currents, reflection, multiple
@@ -115,18 +104,6 @@ Choices already made and why — so we don't relitigate them or re-explore dead 
   normal power vanishes in the comoving frame; the invariant content is the radiated energy
   ($\S$7.7) and momentum ($F_x^{\text{tot}}$). We keep the lab-frame accounting but state
   the frame-dependence explicitly (spec §7.9) so we never mistake it for energy creation.
-- **Per-plate loads and the output-energy function** (2026-06-26). Each sheet's normal DOF
-  carries an ideal lossless load that holds the drift and exchanges the normal power with
-  the outside, giving the system an explicit $W^{\text{out}}(t)$ (spec §§2, 5, 6, 7.10).
-  Chosen because it is *not* a new physical object — it is the applied normal force of §6
-  read as an energy port — so it adds no fields and no charge, yet makes the energy
-  accounting tangible. It also lets us keep **massless** sheets: the load supplies the
-  force that maintains $u$ (= the zero-net-force condition masslessness already demands), so
-  no inertia is needed. Two caveats are settled in the spec so we never mistake this for
-  free energy: the Coulomb part of each load's output is constant and sums to zero
-  (motor/generator pairs cancel; the split flips sign if $u$ reverses), and the only net
-  output is the radiation-pressure recoil, rerouted from the lab-frame radiation budget.
-  All of it is frame-dependent (zero in the comoving frame).
 
 ---
 
@@ -170,17 +147,3 @@ Short, dated entries — "what we just did." Keep it lean; deep history is prese
   - Resolved the "acceleration only from radiation" wish as prescribed-constant drift
     (masslessness forbids free $x$-acceleration); parked true radiation-driven drift under
     Open Questions.
-
-- **2026-06-26 — Added per-plate loads and the system output-energy function.**
-  - Introduced an ideal load on each sheet's normal DOF (spec §2): it holds the common
-    drift $u$ and taps the normal power $\mathcal{P}_{i,x}$, defining
-    $W^{\text{out}}(t) = \int \sum_i u f_{i,x}\,dt'$ (spec §§5–6).
-  - Established (spec §7.10) that the load needs **no mass** — it supplies exactly the force
-    masslessness already requires (net normal force zero), so it resolves the $f_x = 0$
-    degeneracy without inertia; mass is needed only in the no-load free-drift branch.
-  - Recorded the two guardrails: the Coulomb part of the output is constant and zero-sum
-    (loads split into generators and motors that exactly cancel; roles swap if $u$ flips),
-    and the only net output is the radiation-pressure recoil $\int u F_x^{\text{tot}}\,dt$,
-    carved from the lab-frame radiation budget — total balance
-    $\mathcal{P}_\perp^{\text{drive}} = \mathcal{P}_{\text{rad}}^{\text{lab}} + \sum_i u f_{i,x}$,
-    so the in-plane drive remains the only source.
