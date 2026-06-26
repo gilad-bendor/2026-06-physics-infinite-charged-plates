@@ -15,10 +15,13 @@ the work involved. It defines the universe, fixes notation and assumptions, and 
 everything we have established.
 
 The core reframing that organizes everything: **a uniform infinite sheet sliding in its
-own plane is, by symmetry, indistinguishable from where it started — so the static charge
-layout never changes. All dynamics live in the _motion_ of the charge, i.e. in surface
-currents and their time derivatives.** This experiment is, in essence, an array of
-**radiating current sheets** coupled by the plane waves they emit.
+own plane is, by symmetry, indistinguishable from where it started — so the in-plane motion
+leaves the static charge layout unchanged, and all radiative dynamics live in the _motion_
+of the charge, i.e. in surface currents and their time derivatives.** This experiment is,
+in essence, an array of **radiating current sheets** coupled by the plane waves they emit.
+The one motion that *does* relocate the charge is the **common normal drift** $u\hat{\mathbf{x}}$
+(§2) — but it does so rigidly, as a Galilean boost; it carries the Coulomb layout along
+without radiating, and its sole new effect is to make the normal forces do work (§7.9).
 
 ---
 
@@ -26,17 +29,28 @@ currents and their time derivatives.** This experiment is, in essence, an array 
 
 - A **finite number** $N$ of **infinite, flat sheets**, indexed $i = 1, \dots, N$.
 - All sheets are **parallel**, each with its normal along the $x$-axis.
-- Each sheet sits at a **fixed coordinate** $x_i$ (its $x$-position never changes) and
-  is **rigid**.
+- The **whole stack drifts** along its normal at a **common, constant velocity**
+  $u\,\hat{\mathbf{x}}$: sheet $i$ sits at $x_i(t) = x_i^0 + u\,t$. Because the drift is
+  shared, every separation $d_{ij} = |x_i - x_j|$ stays **constant** and the stack never
+  changes shape. Each sheet remains **rigid**.
 - Each sheet carries a **uniform surface charge density** $\sigma_i$ (signed, in
   $\mathrm{C/m^2}$), fixed and "painted on."
-- Each sheet may **translate rigidly within its own plane**: its position in $y$ and $z$
-  is a prescribed function of time. Orientation and charge distribution never change.
+- Each sheet may **translate rigidly within its own plane** as well: its position in $y$
+  and $z$ is a prescribed function of time. Orientation and charge distribution never
+  change.
 - The surrounding medium is **vacuum**.
 
 Because each sheet is infinite and uniform, sliding it in $y$ or $z$ maps it onto itself;
 its $y, z$ *position* carries no physical information. Only its *velocity* and
 *acceleration* matter.
+
+Sliding along the normal $x$ is **different**: it relocates the sheet, so a sheet's $x$
+*position* does carry physical information (it sets the Coulomb geometry). But because the
+stack drifts **rigidly** at one shared $u$, only the **common drift** and the **fixed
+separations** $d_{ij}$ enter — the absolute $x$-origin remains free. A common rigid drift
+is just a **Galilean boost** of the static-$x_i$ universe; its new physical content is what
+that boost exposes in the **lab frame** (§7.9): the normal forces now act through a
+displacement, and therefore do work.
 
 ---
 
@@ -47,8 +61,11 @@ if we relax one.
 
 1. **Non-relativistic speeds.** $|\mathbf{v}_i| \ll c$; surface charge density $\sigma_i$
    is constant (no Lorentz-contraction corrections).
-2. **Prescribed motion.** We externally dictate each $\mathbf{v}_i(t)$ and measure the
-   force required. Plates do **not** respond freely to incident fields.
+2. **Prescribed motion.** We externally dictate each plate's velocity and measure the
+   force required; plates do **not** respond freely to incident fields. The velocity has
+   two prescribed parts — a **common constant normal drift** $u\,\hat{\mathbf{x}}$ shared
+   by all plates, and the per-plate **in-plane** motion $\mathbf{v}_{i,\perp}(t)$:
+   $$\mathbf{v}_i(t) = u\,\hat{\mathbf{x}} + \mathbf{v}_{i,\perp}(t).$$
 3. **Non-conducting, painted charge.** Charge cannot redistribute and there are **no
    induced currents**. Consequence: no reflection or scattering — the total field is an
    exact superposition of the waves each sheet emits from its own prescribed motion. No
@@ -56,7 +73,12 @@ if we relax one.
 4. **Massless sheets — electromagnetic accounting only.** The sheets carry **no
    mechanical inertia** (no mass). Consequently there is no kinetic-energy term for the
    sheets; all forces and work are purely electromagnetic, and every energy quantity we
-   track is field energy.
+   track is field energy. Because they are massless, the normal drift $u$ is **prescribed
+   and constant**, not free: a massless sheet cannot undergo a finite radiation-*driven*
+   normal acceleration (free dynamics would force the degenerate $f_x = 0$). So the applied
+   force maintains the constant $u$, and we read off the **normal power** it must supply.
+   Letting radiation genuinely accelerate the plates along $x$ would require giving them
+   mass — a different universe (see the notebook).
 5. **No external sources or fields**, no gravity, no boundaries at infinity (fields
    $\to 0$ far away unless emitted by a sheet).
 6. **Retardation is fully retained** (see §4.5 and §7.8). No quasi-static approximation.
@@ -69,7 +91,7 @@ if we relax one.
 
 | Axis | Direction | Role |
 |------|-----------|------|
-| $x$  | left/right | **Normal** to all sheets; the stacking axis. Each $x_i$ is fixed. |
+| $x$  | left/right | **Normal** to all sheets; the stacking axis. The stack drifts along $x$ at common constant $u$ (separations $d_{ij}$ fixed). |
 | $y$  | up/down    | In-plane; sheets may move freely. |
 | $z$  | near/far   | In-plane; sheets may move freely. |
 
@@ -112,6 +134,9 @@ frequency $f$ (wavelength $\lambda = c/f$), separations satisfy $d_{ij} \gg \lam
 are in the **radiation/wave zone**, not the near-field/quasi-static zone. Plate $j$'s
 motion reaches plate $i$ only after $\tau_{ij}$, by which time $j$ may have completed many
 cycles. We therefore use the full time-dependent Maxwell equations and retarded fields.
+The common normal drift leaves every $d_{ij}$ constant, so the retarded delays
+$\tau_{ij}$ are themselves unchanged (no time-dependent geometry, no Doppler at leading
+order).
 
 ---
 
@@ -126,6 +151,10 @@ For each plate $i$ and time $t$:
    $\mathbf{f}_i^{\text{app}} = -\mathbf{f}_i$ needed to maintain the prescribed motion.
 3. **Power / work per unit area** — $\mathcal{P}_i = \mathbf{f}_i^{\text{app}}\cdot\mathbf{v}_i$
    and $W_i = \int \mathcal{P}_i\,dt$ — and the total radiated power flux via $\mathbf{S}$.
+   With the drift switched on, $\mathbf{v}_i = u\hat{\mathbf{x}} + \mathbf{v}_{i,\perp}$, so
+   the power splits into an **in-plane** part $\mathcal{P}_{i,\perp} =
+   \mathbf{f}_{i,\perp}^{\text{app}}\cdot\mathbf{v}_{i,\perp}$ and the **new normal part**
+   $\mathcal{P}_{i,x} = f_{i,x}^{\text{app}}\,u$ (zero when $u = 0$).
 
 ---
 
@@ -134,32 +163,51 @@ For each plate $i$ and time $t$:
 These collect the established results into the equations that fully describe the system
 under the assumptions of §3. Derivations and reasoning are in §7.
 
-**Static (longitudinal) field at plate $i$** — purely the Coulomb field of the *other*
-plates (a plate's own static field averages to zero at itself):
+**Longitudinal (convected-Coulomb) field at plate $i$** — purely the Coulomb field of the
+*other* plates (a plate's own static field averages to zero at itself). The drift makes
+this pattern *translate* rigidly at $u$, but because every separation is fixed its **value
+at each plate is unchanged**:
 $$
 E_{i,x}^{\text{stat}} = \frac{1}{2\varepsilon_0}\sum_{j \neq i}\sigma_j\,\operatorname{sgn}(x_i - x_j),
 \qquad E_{i,y}^{\text{stat}} = E_{i,z}^{\text{stat}} = 0 .
 $$
 
 **Dynamic (transverse) field at plate $i$** — superposition of the retarded plane waves
-from every plate (the $j = i$ term, at zero delay, is the self / radiation-reaction term):
+from every plate (the $j = i$ term, at zero delay, is the self / radiation-reaction term).
+Only the **in-plane** velocity radiates; the normal drift carries no transverse current:
 $$
-\boxed{\;\mathbf{E}_{i,\perp}(t) = -\frac{\mu_0 c}{2}\sum_{j}\sigma_j\,\mathbf{v}_j\!\left(t - \frac{d_{ij}}{c}\right)\;}
+\boxed{\;\mathbf{E}_{i,\perp}(t) = -\frac{\mu_0 c}{2}\sum_{j}\sigma_j\,\mathbf{v}_{j,\perp}\!\left(t - \frac{d_{ij}}{c}\right)\;}
 \qquad d_{ii} = 0 .
 $$
 
-**In-plane force per unit area on plate $i$** (the working force; the magnetic force is
-normal — see §7.6):
+**In-plane force per unit area on plate $i$** (the leading working force):
 $$
-\mathbf{f}_i = \sigma_i\,\mathbf{E}_{i,\perp}(t)
-= -\frac{\mu_0 c\,\sigma_i}{2}\sum_{j}\sigma_j\,\mathbf{v}_j\!\left(t - \frac{d_{ij}}{c}\right).
+\mathbf{f}_{i,\perp} = \sigma_i\,\mathbf{E}_{i,\perp}(t)
+= -\frac{\mu_0 c\,\sigma_i}{2}\sum_{j}\sigma_j\,\mathbf{v}_{j,\perp}\!\left(t - \frac{d_{ij}}{c}\right)
+\;\;(+\,\text{an } O(u/c)\text{ magnetic term, §7.8}).
 $$
 
-**Applied force, power, and work per unit area:**
+**Normal ($x$) force per unit area on plate $i$** — the Coulomb force plus the magnetic
+radiation-pressure force; both point along $\hat{\mathbf{x}}$ (self terms average to zero,
+$\mathbf{K}_{i,\perp} = \sigma_i\mathbf{v}_{i,\perp}$):
+$$
+f_{i,x} = \sigma_i\,E_{i,x}^{\text{stat}} + \big(\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp}\big)_x .
+$$
+
+**Applied force, power, and work per unit area** ($\mathbf{v}_i = u\hat{\mathbf{x}} + \mathbf{v}_{i,\perp}$):
 $$
 \mathbf{f}_i^{\text{app}} = -\mathbf{f}_i, \qquad
-\mathcal{P}_i = \mathbf{f}_i^{\text{app}}\cdot\mathbf{v}_i, \qquad
+\mathcal{P}_i = \underbrace{\mathbf{f}_{i,\perp}^{\text{app}}\cdot\mathbf{v}_{i,\perp}}_{\text{in-plane}}
+            + \underbrace{(-u\,f_{i,x})}_{\text{normal (new)}}, \qquad
 W_i = \int_0^T \mathcal{P}_i\,dt .
+$$
+
+**Net normal power** — summed over all plates the Coulomb terms cancel in action–reaction
+pairs ($\sum_i \sigma_i E_{i,x}^{\text{stat}} = 0$), leaving only the radiation-pressure
+recoil:
+$$
+\sum_i \mathcal{P}_{i,x} = -u\,F_x^{\text{tot}}, \qquad
+F_x^{\text{tot}} = \sum_i \big(\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp}\big)_x .
 $$
 
 > Everything the experiment asks about is contained in these boxed relations plus the
@@ -190,13 +238,24 @@ $\partial_x B_x = 0$ and Faraday's law gives $\partial_t B_x = 0$, so $B_x$ is a
 constant — zero with no imposed background. Physically, only in-plane currents exist, and
 they produce only in-plane $\mathbf{B}$.
 
-### 7.4 The electric field's $x$-component is purely static Coulomb
+### 7.4 The electric field's $x$-component is the convected Coulomb field — non-radiative
 
-$E_x$ is the only longitudinal component and it is **time-independent**
-($\partial_t E_x = 0$, since there is no current along $x$). Radiation never contributes
-to $E_x$. The transverse components $E_y, E_z$ are **purely radiative** — nonzero only
-when there is in-plane acceleration along that axis. In short: *the time-varying part of
-$\mathbf{E}$ is entirely transverse.*
+$E_x$ is the only longitudinal component. With the stack drifting it is **no longer
+static**: each moving charged sheet carries a normal current $J_x = \sigma_i u$ at its
+location, and the $x$-component of Ampère's law gives $\partial_t E_x = -J_x/\varepsilon_0$
+there. But this is nothing more than the rigid **translation** of the Coulomb step pattern
+at speed $u$ — the *boosted* electrostatic field, **not radiation**. For a single sheet,
+$$
+E_x(x,t) = \frac{\sigma}{2\varepsilon_0}\,\operatorname{sgn}\!\big(x - x_i(t)\big),
+\qquad
+\partial_t E_x = -\frac{\sigma u}{\varepsilon_0}\,\delta\big(x - x_i(t)\big),
+$$
+which is exactly $-J_x/\varepsilon_0$. Because the common drift keeps every separation
+fixed, the **value of $E_x$ sampled at each plate is unchanged** from the static-$x_i$ case
+(§6). Radiation still never contributes to $E_x$. The transverse components $E_y, E_z$
+remain **purely radiative** — nonzero only with in-plane acceleration. In short: *the
+time-varying part of $\mathbf{E}$ splits into a non-radiative convected-Coulomb piece
+(longitudinal) and the radiative transverse piece.*
 
 ### 7.5 Single-sheet emission (the building block)
 
@@ -221,7 +280,10 @@ $\hat{\mathbf{x}}\times(\mathbf{B}_{\text{above}} - \mathbf{B}_{\text{below}}) =
 **Field/motion pairing** (since radiated $\mathbf{E}\parallel\mathbf{K}$ and
 $\mathbf{B}\perp$ both): motion along $y \Rightarrow (E_y, B_z)$; motion along
 $z \Rightarrow (E_z, B_y)$. If no plate ever moves in $z$, the $(E_z, B_y)$ family stays
-identically zero.
+identically zero. The **normal drift** $u\hat{\mathbf{x}}$ adds a longitudinal current
+$\sigma u$ but no transverse current, and at constant velocity no acceleration: it sources
+**no radiated wave** (only the convected Coulomb field of §7.4). So $\mathbf{v}$ here means
+the in-plane velocity $\mathbf{v}_\perp$.
 
 ### 7.6 Self-field & radiation reaction
 
@@ -236,7 +298,10 @@ $$
 $$
 This is a **velocity-proportional drag** — the radiation reaction. Unlike the point-charge
 case, it is finite, well-behaved (per unit area), and free of runaway/pre-acceleration
-pathologies.
+pathologies. The constant normal drift contributes **nothing** here: it neither radiates
+(§7.5) nor breaks the self-field's symmetry ($E_x^{\text{self}}$ and $\mathbf{B}^{\text{self}}$
+still average to zero at the sheet), so there is no self-force along $x$. The drag stays
+purely in-plane, set by $\mathbf{v}_\perp$ alone.
 
 ### 7.7 Energy balance
 
@@ -248,17 +313,50 @@ This is exactly the Poynting flux carried away by the two emitted waves
 ($\mathcal{P} = 2\times \tfrac{\mu_0 c}{4}\sigma^2 |\mathbf{v}|^2$). Energy is conserved:
 the work done against the drag becomes radiated field energy.
 
-### 7.8 Forces: which one does work
+### 7.8 Forces: which ones do work (now both channels)
 
 The total force per area on a sheet is
-$\mathbf{f} = \sigma\,\mathbf{E}_{\text{avg}} + \mathbf{K}\times\mathbf{B}_{\text{avg}}$.
-- The **magnetic** term: $\mathbf{K}$ and the external $\mathbf{B}$ are both in-plane, so
-  $\mathbf{K}\times\mathbf{B}$ points along $\hat{\mathbf{x}}$ — **normal** to the sheet.
-  It is absorbed by whatever holds $x_i$ fixed and **does no work**.
-- The **electric** term (in-plane) is the only force that does work on the moving sheet.
+$\mathbf{f} = \sigma\,\mathbf{E}_{\text{avg}} + \mathbf{K}\times\mathbf{B}_{\text{avg}}$,
+with $\mathbf{K} = \sigma\,(u\hat{\mathbf{x}} + \mathbf{v}_\perp)$ and $\mathbf{B}$ in-plane
+($B_x \equiv 0$ still — the normal current sources no $\mathbf{B}$). Resolving into normal
+and in-plane parts:
 
-So magnetism never directly drives the $y$/$z$ motion; it appears only as a normal stress
-and as the energy carrier of the radiated waves.
+- **In-plane forces.** The transverse electric force $\sigma\mathbf{E}_\perp$ — the leading
+  driver of the $y/z$ motion — **plus** a smaller magnetic term
+  $\sigma\,u\,\hat{\mathbf{x}}\times\mathbf{B}_\perp$ that the drift newly switches on
+  (in-plane $\times$ normal-velocity), of relative size $O(u/c)$.
+- **Normal ($x$) forces.** The Coulomb force $\sigma E_x^{\text{stat}}$ **plus** the
+  magnetic radiation-pressure force $\sigma\,\mathbf{v}_\perp\times\mathbf{B}_\perp$ (both
+  along $\hat{\mathbf{x}}$).
+
+**What changed.** With $x_i$ pinned, the normal forces did no work (they were absorbed by
+the constraint). Now the sheet drifts at $u$, so the normal forces act through a real
+displacement and **do work** — the new $x$-power channel (§7.9). In particular **magnetism
+now does work**: the radiation-pressure force, moving at $u$, transfers energy. It still
+never *drives the $y/z$ motion* directly (its in-plane piece is only the $O(u/c)$ term
+above), but it is no longer work-free.
+
+### 7.9 The normal power channel and its frame dependence
+
+Because the stack drifts at $u$, each normal force delivers power $\mathcal{P}_{i,x} =
+-u\,f_{i,x}$ (§6), in two pieces:
+
+- **Coulomb part** $-u\,\sigma_i E_{i,x}^{\text{stat}}$. Summed over all plates these
+  cancel in action–reaction pairs ($\sum_i \sigma_i E_{i,x}^{\text{stat}} = 0$): **no net**
+  power, only a reshuffling of energy *between* plates as the rigid Coulomb pattern drifts.
+- **Radiation-pressure part** $-u\,(\mathbf{K}_{i,\perp}\times\mathbf{B}_{i,\perp})_x$.
+  These need **not** cancel: the emitted waves carry net $x$-momentum, the stack feels a
+  net normal force $F_x^{\text{tot}}$, and holding the drift against it costs (or yields)
+  net power $-u\,F_x^{\text{tot}}$.
+
+**Frame dependence (important).** A common rigid drift is a Galilean boost of the
+static-$x_i$ universe, so this normal power is **not a new source of energy**. In the
+**comoving frame** the plates have no normal motion, the normal power is identically zero,
+and the only energy leaving the system is the transverse radiation of §7.7. The lab-frame
+$x$-power is the boost's bookkeeping: force $\times$ velocity is frame dependent, and the
+net piece $-u\,F_x^{\text{tot}}$ is precisely the radiated **momentum** flux
+$F_x^{\text{tot}}$ carried along by the drift $u$. Energy and momentum are conserved in
+both frames; only their split into "work along $x$" versus "radiated energy" differs.
 
 ---
 
@@ -273,3 +371,10 @@ and as the energy carrier of the radiated waves.
   velocity-proportional drag.
 - **Quasi-static** — the (here *invalid*) approximation of instantaneous interaction.
 - **Poynting vector $\mathbf{S}$** — electromagnetic power flux per unit area.
+- **Drift velocity $u$** — the common, constant speed at which the whole stack translates
+  along its normal $x$; a shared Galilean boost that leaves all separations $d_{ij}$ fixed.
+- **Convected Coulomb field** — the ordinary electrostatic field of the charges, rigidly
+  carried along by the drift; time-dependent in the lab frame but non-radiative.
+- **Radiation pressure** — the net normal ($x$) force from the magnetic
+  $\mathbf{K}\times\mathbf{B}$ term, equal to the $x$-momentum flux carried by the emitted
+  waves; its work is the net normal power once $u \neq 0$.

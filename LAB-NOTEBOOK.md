@@ -16,6 +16,14 @@ coupling, the phase lag $\omega d/c$ between the plates, the difference between 
 and anti-phase drive, and the energy exchanged between the two plates versus radiated to
 infinity.
 
+**New ingredient (2026-06-19): a common normal drift.** The whole stack now drifts along
+its normal $x$ at a shared constant velocity $u\hat{\mathbf{x}}$ (spec §2). This is a
+Galilean boost of the old static-$x_i$ universe, so it leaves the separations and the
+transverse master relation untouched — but it opens a **normal power channel**: the
+Coulomb and magnetic forces along $x$ now act through a displacement and do work (spec
+§7.9). For the $N = 2$ case this means we additionally track $\mathcal{P}_{i,x} = -u f_{i,x}$,
+whose net is the radiation-pressure recoil $-u F_x^{\text{tot}}$.
+
 ---
 
 ## 2. Where We're Heading (Roadmap)
@@ -41,7 +49,17 @@ The deeper parking lot (the immediate next step lives in §1–§2):
   and drive frequency — when does a neighbor's retarded field *assist* versus *oppose* a
   plate's motion?
 - **Net momentum / radiation pressure along $x$** from the normal magnetic force
-  $\mathbf{K}\times\mathbf{B}$.
+  $\mathbf{K}\times\mathbf{B}$ — now *activated* by the drift: its work is the net normal
+  power $-u F_x^{\text{tot}}$ (spec §7.9). Open: compute $F_x^{\text{tot}}$ for the $N = 2$
+  sinusoidal case and check it against the $x$-momentum flux of the emitted waves.
+- **The $O(u/c)$ in-plane magnetic cross-force** $\sigma u\,\hat{\mathbf{x}}\times\mathbf{B}_\perp$
+  (spec §7.8): a small drift-induced correction to the in-plane force/power. Worth a clean
+  derivation — is it a genuine aberration/Doppler effect, and does it survive a careful
+  non-relativistic accounting?
+- **Massless-vs-free-drift tension.** The drift is *prescribed* constant because massless
+  sheets cannot accelerate freely along $x$ ($f_x = 0$ degeneracy). If we ever want
+  radiation to genuinely accelerate the plates along $x$, we must reintroduce mass for the
+  normal degree of freedom — a separate universe to branch, not patch.
 - **A clean definition of efficiency** — energy radiated to infinity vs. work supplied by
   the applied force.
 - **Relaxing assumptions:** conducting sheets (induced currents, reflection, multiple
@@ -70,6 +88,22 @@ Choices already made and why — so we don't relitigate them or re-explore dead 
   clean.
 - **Two-document split.** `EXPERIMENT-DOCUMENT.md` holds only settled physics; this
   notebook holds direction and process. No fact lives in both files.
+- **Common constant normal drift $u\hat{\mathbf{x}}$** (2026-06-19). Chosen over per-plate
+  normal velocities because a *shared* drift keeps all $d_{ij}$ fixed — it is a Galilean
+  boost, so the retarded master relations survive intact (the "small" change) while still
+  exposing the new $x$-power channel (the "fundamental" change). Per-plate velocities would
+  make the geometry time-dependent (Doppler, possible collisions / sgn flips) and rewrite
+  §6 wholesale — deferred.
+- **Drift is prescribed and constant, not radiation-driven.** The user's instinct was that
+  "the only acceleration along $x$ is from radiation." Taken literally that is *free*
+  normal dynamics, which is incompatible with massless sheets ($f_x = 0$ degeneracy). We
+  resolved it the consistent way: $u$ is a prescribed constant, the applied force maintains
+  it, and radiation pressure is simply the net normal force whose *work* we now book as the
+  $x$-power. Genuine radiation-driven $x$-acceleration is parked under Open Questions.
+- **The $x$-power is frame-dependent, not free energy.** Because the drift is a boost, the
+  normal power vanishes in the comoving frame; the invariant content is the radiated energy
+  ($\S$7.7) and momentum ($F_x^{\text{tot}}$). We keep the lab-frame accounting but state
+  the frame-dependence explicitly (spec §7.9) so we never mistake it for energy creation.
 
 ---
 
@@ -98,3 +132,18 @@ Short, dated entries — "what we just did." Keep it lean; deep history is prese
   - Made **massless sheets** a firm, uncontested premise (spec §3.4) and purged mass /
     areal-mass-density $\mu_i$ from everywhere. Removed free dynamics from the roadmap (it
     requires an inertial term and is therefore a different universe).
+
+- **2026-06-19 — Added a common normal drift $u\hat{\mathbf{x}}$ (the $x$-power channel).**
+  - Changed the universe (spec §2): the whole stack now drifts along its normal at one
+    shared constant velocity $u$, so $x_i(t) = x_i^0 + ut$ with all $d_{ij}$ fixed.
+  - Worked out the consequences: $E_x$ becomes a **convected** (non-radiative) Coulomb
+    field (§7.4); $B_x \equiv 0$ and the transverse master relation survive unchanged (the
+    drift carries no transverse current); the **normal forces now do work**, opening the
+    $x$-power channel $\mathcal{P}_{i,x} = -u f_{i,x}$, whose net is the radiation-pressure
+    recoil $-u F_x^{\text{tot}}$ (§§7.8–7.9).
+  - Flagged two subtleties in the spec/notebook: the $x$-power is **frame-dependent** (a
+    Galilean boost — not new energy), and a new **$O(u/c)$ in-plane magnetic cross-force**
+    appears.
+  - Resolved the "acceleration only from radiation" wish as prescribed-constant drift
+    (masslessness forbids free $x$-acceleration); parked true radiation-driven drift under
+    Open Questions.
